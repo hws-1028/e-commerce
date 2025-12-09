@@ -1,0 +1,81 @@
+.section-collection {
+    background-image: none;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding: 45px 40px;
+}
+
+.section-collection h2 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+    color: #111827; /* gray-900 */
+    margin-bottom: 0.5rem;
+}
+
+.cards-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+    align-items: start;
+    justify-content: center; /* center grid tracks when there is extra space */
+    justify-items: center; /* center individual cards in their grid cells */
+}
+
+/* Card styles for collections */
+.collection-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: none; /* keep visual size but allow centering */
+    box-sizing: border-box;
+    border-radius: 12px;
+    border: solid 1px #e5e7eb; /* gray-200 */   
+}
+
+.card-image-area {
+    width: 100%;
+    height: 240px; /* o el tamaño que quieras */
+    overflow: hidden;
+}
+
+.card-image-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-content {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.collection-card h3 {
+    font-size: 22px;
+}
+
+.collection-card p {
+    margin: 0;
+    font-size: 16px;
+    color:#374151;
+}
+
+.collection-card ul {
+    padding-left: 1.25rem; /* espacio para la viñeta */
+    margin: 1rem 0;
+    list-style-type: disc;
+}
+
+.collection-card ul li::marker {
+    color: #edc531;
+}
+
+/* subtle hover */
+.collection-card:hover {
+    transform: translateY(-6px);
+    box-shadow: none;
+    transition: transform 180ms ease;
+    border: solid 2px #edc531;
+}

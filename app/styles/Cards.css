@@ -1,0 +1,54 @@
+.cards-grid {
+    /* Contenedor padre para múltiples tarjetas: fila / grid responsivo */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 1rem;
+}
+
+.card {
+    /* Cada tarjeta ocupa hasta un ancho fijo y se adapta al ancho disponible */
+    box-sizing: border-box;
+    flex: 0 1 260px; /* no se estira más allá de 260px por defecto */
+    max-width: 320px;
+    width: 100%;
+    display: block;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* que el contenido utilice el ancho de la tarjeta */
+    padding: 15px;
+    border: solid 1px #e5e7eb; /* gray-200 */
+    background: #fff;
+}
+
+.card-container img,
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.card-image {
+    width: 100%;
+    height: 160px; /* altura fija para consistencia */
+    overflow: hidden;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+    .cards-grid {
+        justify-content: center;
+    }
+    .card {
+        flex: 0 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Nota: envolver las tarjetas con <div className="cards-grid"> ... </div> */
