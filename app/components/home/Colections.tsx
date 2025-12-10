@@ -11,25 +11,18 @@ interface CollectionItem {
 
 const collections: CollectionItem[] = [
   {
-    title: "Fundas para la Cama",
+    title: "Cama",
     image: "/img/e-commerce-colection-bed.jpg",
     link: "/productos?categoria=cama",
     description: "Juegos de cama lujosos que combinan comodidad con estilo",
     list: ["Telas premium", "Múltiples tamaños", "Fácil cuidado"]
   },
   {
-    title: "Fundas para Sofá",
-    image: "/img/e-commerce-colection-sofa.jpg",
+    title: "Colchones",
+    image: "/img/e-commerce-colection-colchon.jpg",
     link: "/productos?categoria=sofa",
     description: "Protege y embellece tus muebles con nuestros diseños elegantes",
     list: ["Ajuste perfecto", "Resistente a manchas", "Opciones reversibles"]
-  },
-  {
-    title: "Fundas para Almohadas",
-    image: "/img/e-commerce-colection-pillows.jpg",
-    link: "/productos?categoria=almohadas",
-    description: "Añade personalidad a cualquier habitación con nuestros cojines decorativos",
-    list: ["Colores vibrantes", "Combina y mezcla", "Detalles artesanales"]
   },
 ];
 

@@ -17,7 +17,7 @@ export default function Button({
   const variants = {
     primary: "bg-[#edc531] text-black hover:bg-[#d4b02b]",
     secondary: "bg-[#a47e1b] text-white hover:bg-[#8a6c15]",
-    outline: "border border-black text-black hover:bg-neutral-100",
+    outline: "outline-btn border-1 border-[#a47e1b] text-[#000000] hover:bg-[#a47e1b]",
   };
 
   const sizes = {

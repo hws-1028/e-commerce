@@ -22,6 +22,20 @@
     justify-items: center; /* center individual cards in their grid cells */
 }
 
+/* Responsive tweaks for collections */
+@media (max-width: 768px) {
+    .section-collection {
+        padding: 28px 18px;
+    }
+
+    .section-collection h2 { font-size: 1.6rem; }
+}
+
+@media (max-width: 480px) {
+    .card-image-area { height: 180px; }
+    .card-content { padding: 1rem; }
+}
+
 /* Card styles for collections */
 .collection-card {
     display: flex;

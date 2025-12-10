@@ -4,21 +4,25 @@
     background-image: url('/img/e-commerce-hero-section.jpg');
     background-size: cover;
     background-position: center;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
-/* Overlay gradient + subtle vignette/shadow to match the example */
+/* Overlay gradient */
 .hero-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    /* gradient: strong white at left, softer in the middle, slight dark to the right */
-    background: linear-gradient(90deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.75) 40%, rgba(0,0,0,0.06) 100%);
+    background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.96) 0%,
+        rgba(255,255,255,0.75) 40%,
+        rgba(0,0,0,0.06) 100%
+    );
     pointer-events: none;
     z-index: 1;
 }
 
-/* Inner shadow to give depth on the right edge */
+/* Vignette / Shadow depth */
 .hero-section::after {
     content: "";
     position: absolute;
@@ -28,7 +32,7 @@
     z-index: 1;
 }
 
-/* Ensure the hero content sits above overlays */
+/* Actual content */
 .hero-section > .relative {
     position: relative;
     z-index: 2;
@@ -38,18 +42,82 @@
     font-size: 3rem;
     line-height: 1.1;
     font-weight: 800;
-    color: #111827; /* gray-900 */
+    color: #111827;
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    max-width: 600px;
 }
 
 .hero-section p {
     font-size: 16px;
-    color: #374151; /* gray-700 */
+    color: #374151;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     width: 50%;
+    max-width: 500px;
 }
 
-button {
-    padding: 10px;
+/* ========================================= */
+/* 📱 TABLET (entre 481px y 768px) */
+/* ========================================= */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .hero-section p {
+        width: 90%;
+        font-size: 15px;
+        max-width: none;
+    }
+
+    .hero-section::after {
+        box-shadow: inset -120px 0 120px rgba(0,0,0,0.12);
+    }
+}
+
+/* ========================================= */
+/* 📱📱 MOBILE (≤ 480px) */
+/* ========================================= */
+@media (max-width: 480px) {
+
+    .hero-section {
+        padding: 1.5rem 1rem;
+        text-align: left;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem;
+        line-height: 1.15;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Reducir overlay para que no oscurezca tanto en pantallas pequeñas */
+    .hero-section::before {
+        background: linear-gradient(
+            90deg,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.85) 40%,
+            rgba(0,0,0,0.04) 100%
+        );
+    }
+
+    .hero-section::after {
+        box-shadow: inset -80px 0 80px rgba(0,0,0,0.10);
+    }
+
+    .hero-section button {
+        width: 100%;
+        max-width: 260px;
+        padding: 10px;
+    }
 }

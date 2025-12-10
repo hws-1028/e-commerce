@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--container-max: 1200px;
+	--space-lg: 2.5rem;
+	--space-md: 1rem;
+	--accent: #edc531;
+	--text: #111827;
+}
+
+html {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color: var(--text);
+	line-height: 1.6;
+	background: #ffffff;
+}
+
+/* Responsive container utility for non-Tailwind parts */
+.site-container {
+	max-width: var(--container-max);
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+/* Make media elements fluid by default */
+img, picture, video, iframe {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Buttons: default responsive behavior */
+button {
+	min-width: 0;
+	box-sizing: border-box;
+}
+
+/* Base responsive typography adjustments (mobile-first) */
+@media (max-width: 640px) {
+	html { font-size: 15px; }
+}
+
+@media (min-width: 1024px) {
+	html { font-size: 16px; }
+}
+
+/* Small helpers for layout shifts */
+.stack-on-mobile {
+	display: flex;
+	gap: 1rem;
+}
+@media (max-width: 640px) {
+	.stack-on-mobile { flex-direction: column; }
+}

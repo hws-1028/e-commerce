@@ -1,32 +1,58 @@
 "use client";
-import "../../styles/Header.css"
+
+import { useState } from "react";
+import "../../styles/Header.css";
 import Button from "../ui/Button";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="w-full bg-white shadow-sm">
-        <h1 className="text-2xl font-bold text-gray-800">Cozy Home</h1>
+      <div className="header-container">
 
-          <nav>
-            <a href="/" className="text-gray-700 hover:text-blue-600 transition font-medium text-lg">
-              Inicio
-            </a>
-            <a href="/productos" className="text-gray-700 hover:text-blue-600 transition font-medium text-lg">
-              Productos
-            </a>
-            <a href="/ofertas" className="text-gray-700 hover:text-blue-600 transition font-medium text-lg">
-              Ofertas
-            </a>
-            <a href="/contacto" className="text-gray-700 hover:text-blue-600 transition font-medium text-lg">
-              Contacto
-            </a>
-          </nav>
+        {/* LOGO */}
+        <h1 className="logo">Cozy Home</h1>
 
-        <div className="flex items-center gap-6">
-          <Button variant="primary" size="md" className="whitespace-nowrap">
+        {/* NAV DESKTOP */}
+        <nav className="nav-desktop">
+          <a href="/" className="nav-link">Inicio</a>
+          <a href="/productos" className="nav-link">Productos</a>
+          <a href="/ofertas" className="nav-link">Ofertas</a>
+          <a href="/contacto" className="nav-link">Contacto</a>
+        </nav>
+
+        {/* BOTÓN DESKTOP */}
+        <div className="header-actions nav-desktop">
+          <Button variant="primary" size="md">Comprar Ahora</Button>
+        </div>
+
+        {/* MENÚ HAMBURGUESA (solo móvil) */}
+        <button 
+          className="hamburger-btn"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "✖" : "☰"}
+        </button>
+      </div>
+
+      {/* MENU MOBILE */}
+      {open && (
+        <div className="mobile-menu">
+          <a href="/" className="mobile-link">Inicio</a>
+          <a href="/productos" className="mobile-link">Productos</a>
+          <a href="/ofertas" className="mobile-link">Ofertas</a>
+          <a href="/contacto" className="mobile-link">Contacto</a>
+
+          <Button 
+            variant="secondary" 
+            size="md" 
+            className="w-full mt-3"
+          >
             Comprar Ahora
           </Button>
         </div>
+      )}
     </header>
   );
 }

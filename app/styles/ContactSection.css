@@ -1,0 +1,54 @@
+/* 🌟 Desktop & base styles */
+.section-contact {
+    background-color: #edc531;
+    padding: 40px 0;
+}
+
+.section-contact h2 {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+}
+
+.section-contact p {
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* 📱 Mobile responsive */
+@media (max-width: 640px) {
+
+    .section-contact {
+        padding: 28px 0;              /* ✔ menos padding en móvil */
+    }
+
+    .section-contact h2 {
+        font-size: 22px;              /* ✔ título más pequeño */
+        padding: 0 1rem;
+    }
+
+    .section-contact p {
+        font-size: 15px;              /* ✔ texto más pequeño */
+        padding: 0 1rem;
+        margin-bottom: 16px;
+    }
+
+    .section-contact button {
+        width: 100%;                  /* ✔ botón full-width */
+        max-width: 300px;
+    }
+}
+
+/* 📱📱 Very small phones */
+@media (max-width: 400px) {
+
+    .section-contact h2 {
+        font-size: 20px;
+    }
+
+    .section-contact p {
+        font-size: 14px;
+    }
+}

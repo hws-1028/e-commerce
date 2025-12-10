@@ -1,7 +1,22 @@
 button {
     border: none;
-    padding: 10px;
+    padding: 10px 14px;
     margin: 10px;
     border-radius: 8px;
-    width: 125px;
+    min-width: 125px;
+    width: auto;
+}
+
+/* Outline variant: text white on hover */
+button.outline-btn:hover {
+    color: #ffffff !important;
+}
+
+/* Make buttons full-width on very small screens */
+@media (max-width: 480px) {
+    button {
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 16px;
+    }
 }
