@@ -4,6 +4,7 @@ import Card from "../ui/Cards";
 import "../../styles/ProductsGrid.css"
 import { useState } from "react";
 import CollectionFilter from "./CollectionFilter";
+import PriceFilter from "./PriceFilter";
 
 interface Product {
   id: number;
@@ -60,20 +61,35 @@ const products: Product[] = [
 
 export default function ProductsGrid() {
   const [activeCategory, setActiveCategory] = useState("Todos");
+  const [priceRange, setPriceRange] = useState({ min: 0, max: Infinity });
 
-  const filteredProducts =
-    activeCategory === "Todos"
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory =
+      activeCategory === "Todos" || product.category === activeCategory;
+
+    const matchesPrice =
+      product.price >= priceRange.min &&
+      product.price <= priceRange.max;
+
+    return matchesCategory && matchesPrice;
+  });
+
 
   return (
     <section className="section-products w-full py-12">
       <div className="products-list max-w-7xl mx-auto px-6">
 
-        <CollectionFilter
-          active={activeCategory}
-          onChange={setActiveCategory}
-        />
+        <div className="filters-items">
+          <CollectionFilter
+            active={activeCategory}
+            onChange={setActiveCategory}
+          />
+
+          <PriceFilter
+            value={priceRange}
+            onChange={setPriceRange}
+          />         
+        </div>
 
         <div className="products-grid">
           {filteredProducts.map((product) => (

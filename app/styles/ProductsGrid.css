@@ -10,3 +10,11 @@
     flex-direction: column;
     gap: 2rem;
 }
+
+.filters-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;               /* separación horizontal */
+    flex-wrap: wrap;         /* permite bajar en mobile */
+}

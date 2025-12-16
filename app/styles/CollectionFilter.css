@@ -1,5 +1,5 @@
 .collection-filter-wrapper {
-    width: 100%;
+    width: auto;        /* ❗ antes 100% */
     display: flex;
     justify-content: center;
 }
