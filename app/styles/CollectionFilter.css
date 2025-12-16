@@ -1,5 +1,9 @@
+/* =========================
+   COLLECTION FILTER (BASE)
+========================= */
+
 .collection-filter-wrapper {
-    width: auto;        /* ❗ antes 100% */
+    width: auto;
     display: flex;
     justify-content: center;
 }
@@ -7,14 +11,14 @@
 /* Contenedor tipo cápsula */
 .collection-filter {
     display: flex;
+    gap: 0.25rem;
     background: #f5f1ec;
-    padding: 3px;
-    /* border-radius: 80px; */
-    overflow-x: auto;
+    padding: 4px;
     border-radius: 15px;
+    overflow-x: auto;
 }
 
-/* Ocultar scrollbar en mobile */
+/* Ocultar scrollbar */
 .collection-filter::-webkit-scrollbar {
     display: none;
 }
@@ -23,11 +27,11 @@
 .filter-pill {
     border: none;
     background: transparent;
-    /* padding: 10px 10px; */
-    /* border-radius: 80px; */
+    padding: 0.45rem 0.9rem;
+    border-radius: 12px;
     font-size: 14px;
     font-weight: 500;
-    color: #6b7280; /* gray-500 */
+    color: #6b7280;
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s ease;
@@ -38,9 +42,55 @@
     color: #111827;
 }
 
-/* Activo */
+/* Active */
 .filter-pill.active {
     background: #ffffff;
     color: #111827;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+    .collection-filter {
+        padding: 6px;
+        gap: 0.4rem;
+    }
+
+    .filter-pill {
+        padding: 0.55rem 1rem; /* mejor área táctil */
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   TABLET (≥ 640px)
+========================= */
+@media (min-width: 640px) {
+
+    .collection-filter {
+        gap: 0.5rem;
+    }
+
+    .filter-pill {
+        padding: 0.5rem 1.1rem;
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   DESKTOP (≥ 1024px)
+========================= */
+@media (min-width: 1024px) {
+
+    .collection-filter {
+        overflow-x: visible; /* ya no necesita scroll */
+    }
+
+    .filter-pill {
+        padding: 0.45rem 1rem;
+        font-size: 14px;
+    }
 }

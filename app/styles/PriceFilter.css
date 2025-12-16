@@ -1,28 +1,33 @@
+/* =========================
+   PRICE FILTER (BASE)
+========================= */
+
 .price-filter-wrapper {
-    width: auto;        /* ❗ antes 100% */
+    width: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
 }
-/* Pills container (same as CollectionFilter) */
+
+/* Pills container */
 .price-filter {
     display: flex;
     gap: 0.5rem;
     background: #f5f1ec;
-    padding: 3px;
-    overflow-x: auto;
+    padding: 4px;
     border-radius: 15px;
+    overflow-x: auto;
 }
 
 .price-filter::-webkit-scrollbar {
     display: none;
 }
 
-/* Reuse same pill styles */
+/* Pills */
 .filter-pill {
     border: none;
     background: transparent;
-    padding: 0.5rem 1.2rem;
+    padding: 0.45rem 1rem;
     font-size: 14px;
     font-weight: 500;
     color: #6b7280;
@@ -52,14 +57,79 @@
     border: 1px solid #e5e7eb;
 }
 
+/* Inputs */
 .price-custom-range input {
     width: 100px;
-    padding: 0.4rem 0.6rem;
+    padding: 0.45rem 0.6rem;
     border-radius: 6px;
     border: 1px solid #e5e7eb;
     font-size: 0.9rem;
 }
 
+/* Separator */
 .price-custom-range span {
     color: #6b7280;
+}
+
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+    .price-filter {
+        padding: 6px;
+        gap: 0.4rem;
+    }
+
+    .filter-pill {
+        padding: 0.55rem 1rem; /* mejor área táctil */
+        font-size: 14px;
+    }
+
+    .price-custom-range {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+        width: 100%;
+    }
+
+    .price-custom-range input {
+        width: 100%;
+    }
+}
+
+/* =========================
+   TABLET (≥ 640px)
+========================= */
+@media (min-width: 640px) {
+
+    .price-filter {
+        gap: 0.5rem;
+    }
+
+    .filter-pill {
+        padding: 0.5rem 1.1rem;
+        font-size: 15px;
+    }
+
+    .price-custom-range {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+    }
+}
+
+/* =========================
+   DESKTOP (≥ 1024px)
+========================= */
+@media (min-width: 1024px) {
+
+    .price-filter {
+        overflow-x: visible;
+    }
+
+    .filter-pill {
+        padding: 0.45rem 1rem;
+        font-size: 14px;
+    }
 }

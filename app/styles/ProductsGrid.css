@@ -1,3 +1,7 @@
+/* =========================
+   PRODUCTS GRID (BASE)
+========================= */
+
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -5,16 +9,70 @@
     align-items: stretch;
 }
 
+/* Contenedor principal */
 .products-list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+/* Filtros (Collection + Price) */
 .filters-items {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;               /* separación horizontal */
-    flex-wrap: wrap;         /* permite bajar en mobile */
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   TABLET (≥ 640px)
+========================= */
+@media (min-width: 640px) {
+
+    .products-grid {
+        gap: 1.75rem; /* un poco más de aire */
+    }
+
+    .filters-items {
+        justify-content: center;
+    }
+}
+
+/* =========================
+   DESKTOP (≥ 1024px)
+========================= */
+@media (min-width: 1024px) {
+
+    .products-list {
+        gap: 2.5rem;
+    }
+
+    .filters-items {
+        justify-content: flex-start; /* más natural en desktop */
+    }
+
+    .products-grid {
+        gap: 2rem;
+    }
+}
+
+/* =========================
+   SMALL MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+    .products-list {
+        gap: 1.5rem;
+    }
+
+    .filters-items {
+        flex-direction: column;  /* filtros uno debajo del otro */
+        gap: 0.75rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 card por fila */
+        gap: 1.25rem;
+    }
 }
