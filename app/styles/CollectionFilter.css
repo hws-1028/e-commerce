@@ -1,0 +1,46 @@
+.collection-filter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor tipo cápsula */
+.collection-filter {
+    display: flex;
+    background: #f5f1ec;
+    padding: 3px;
+    /* border-radius: 80px; */
+    overflow-x: auto;
+    border-radius: 15px;
+}
+
+/* Ocultar scrollbar en mobile */
+.collection-filter::-webkit-scrollbar {
+    display: none;
+}
+
+/* Pills */
+.filter-pill {
+    border: none;
+    background: transparent;
+    /* padding: 10px 10px; */
+    /* border-radius: 80px; */
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280; /* gray-500 */
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.filter-pill:hover {
+    color: #111827;
+}
+
+/* Activo */
+.filter-pill.active {
+    background: #ffffff;
+    color: #111827;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}

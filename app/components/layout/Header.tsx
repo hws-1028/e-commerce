@@ -3,6 +3,7 @@
 import { useState } from "react";
 import "../../styles/Header.css";
 import Button from "../ui/Button";
+import Link from "next/link";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -40,7 +41,9 @@ export default function Header() {
       {open && (
         <div className="mobile-menu">
           <a href="/" className="mobile-link">Inicio</a>
-          <a href="/productos" className="mobile-link">Productos</a>
+          <Link href="/productos" className="nav-link">
+              Productos
+          </Link>
           <a href="/ofertas" className="mobile-link">Ofertas</a>
           <a href="/contacto" className="mobile-link">Contacto</a>
 

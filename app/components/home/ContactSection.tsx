@@ -16,7 +16,7 @@ export default function ContactSection() {
 
         {/* Botón */}
         <Button
-          variant="outline"
+          variant="secondary"
           size="lg"
           
         >

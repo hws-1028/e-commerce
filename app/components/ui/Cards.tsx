@@ -1,5 +1,5 @@
 import Button from "./Button";
-import "../../styles/Cards.css"
+import "../../styles/Cards.css";
 
 interface CardProps {
   image: string;
@@ -13,32 +13,23 @@ export default function Card({ image, title, price }: CardProps) {
       <div className="card-container">
 
         {/* Imagen */}
-        <div className="card-image bg-neutral-100">
-          <img
-            src={image}
-            alt={title}
-            className="object-cover"
-          />
+        <div className="card-image">
+          <img src={image} alt={title} />
         </div>
 
         {/* Info */}
-        <div className="card-body p-4 flex flex-col gap-2">
+        <div className="card-body">
+          <h3>{title}</h3>
 
-          <h3 className="font-semibold text-lg line-clamp-1">{title}</h3>
-
-          <span className="text-xl font-bold text-[#a47e1b]">
+          <span className="price">
             ${price.toLocaleString()}
           </span>
 
-          <Button
-            variant="primary"
-            size="md"
-            className="mt-2"
-          >
+          <Button variant="primary" size="md">
             Ver producto
           </Button>
-
         </div>
+
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ button {
     border-radius: 8px;
     min-width: 125px;
     width: auto;
+    cursor: pointer;
 }
 
 /* Outline variant: text white on hover */
